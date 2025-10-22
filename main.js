@@ -83,6 +83,14 @@ $(document).ready(function() {
     const logo = $('#navbar-logo');
     const mobileLogo = $('#navbar-logo-mobile');
     const hamburgerBtn = $('#mobile-menu-btn');
+    const heroForm = $('#staticContactForm').parent(); // Get the form container
+    
+    // Hide hero form instantly when scrolling starts
+    if (scrollTop > 10) {
+      heroForm.fadeOut(200); // Quick fade out
+    } else {
+      heroForm.fadeIn(200); // Fade in when back at top
+    }
     
     if (scrollTop > 100) {
       $('.back-to-top').fadeIn();
